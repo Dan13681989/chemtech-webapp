@@ -2,11 +2,14 @@ import React from 'react';
 import './App.css';
 import { chemtechData } from './data/chemtechData';
 import ConversationExplorer from './components/ConversationExplorer';
+import VictoryBanner from './components/VictoryBanner';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <VictoryBanner />
+        
         <h1>🧪 CHEMTECH Analysis Platform</h1>
         <p>Interactive dashboard for {chemtechData.overview.totalConversations} technical conversations</p>
         
