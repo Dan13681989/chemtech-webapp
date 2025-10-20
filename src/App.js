@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { chemtechData } from './data/chemtechData';
+import ConversationExplorer from './components/ConversationExplorer';
 
 function App() {
   return (
@@ -45,22 +46,8 @@ function App() {
           </a>
         </div>
 
-        {/* Key Conversations */}
-        <div className="conversations-section">
-          <h3>Key Conversations Analyzed:</h3>
-          {chemtechData.keyConversations.map(conv => (
-            <div key={conv.id} className="conversation-card">
-              <h4>CHEMTECH {conv.id}: {conv.title}</h4>
-              <p>{conv.summary}</p>
-              <div className="tech-tags">
-                {conv.technologies.map(tech => (
-                  <span key={tech} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-              <small>{conv.messages} messages analyzed</small>
-            </div>
-          ))}
-        </div>
+        {/* Interactive Conversation Explorer */}
+        <ConversationExplorer conversations={chemtechData.keyConversations} />
 
         {/* Technologies */}
         <div className="tech-stack">
